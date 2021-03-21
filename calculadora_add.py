@@ -1,4 +1,3 @@
-import math
 while True:
     # Leitura de dados
     n1 = int(input('Digite um número inteiro: '))

@@ -18,9 +18,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Curso em Vídeo Python/desafios python" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.teste">
+  <component name="RunManager" selected="Python.calculadora_add">
     <configuration name="calculadora_add" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Calculadora" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -65,8 +65,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.teste" />
         <item itemvalue="Python.calculadora_add" />
+        <item itemvalue="Python.teste" />
       </list>
     </recent_temporary>
   </component>

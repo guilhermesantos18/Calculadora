@@ -28,7 +28,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.calculadora_add">
+  <component name="RunManager" selected="Python.subtracao">
     <configuration name="calculadora_add" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Calculadora" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -94,8 +94,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.calculadora_add" />
         <item itemvalue="Python.subtracao" />
+        <item itemvalue="Python.calculadora_add" />
         <item itemvalue="Python.teste" />
       </list>
     </recent_temporary>

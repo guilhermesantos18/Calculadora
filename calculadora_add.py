@@ -47,6 +47,7 @@ while True:
                 mult *= num
             print(f'O resultado é igual a \033[32m{mult}\033[m')
         elif opcao == 4:
+            div = 0
             for num in listanum:
                 div /= num
             print(f'O resultado é igual a \033[32m{div}\033[m')

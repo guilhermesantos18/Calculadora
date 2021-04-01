@@ -1,9 +1,9 @@
 listanum = []
-soma = subtracao = multiplicacao = 0
+soma = subtracao = 0
 # Interface
-print('-' * 50)
-print('Calculadora'.center(50))
-print('-' * 50)
+print('-' * 60)
+print('Calculadora'.center(60))
+print('-' * 60)
 while True:
     tiponumeros = str(input('Você deseja trabalhar com que tipos de números [inteiros, reias]? ')).lower().strip()
     if tiponumeros not in 'inteiros' or tiponumeros == '':
@@ -18,7 +18,7 @@ while True:
         if continuar == 'N':
             break
 while True:
-    print('-' * 50)
+    print('-' * 60)
     print('''Escolha uma das seguintes opções:
 [1] - Somar
 [2] - Subtrair
@@ -30,7 +30,7 @@ while True:
     except:
         print('\033[1;31mErro digite um número inteiro!\033[m')
     else:
-        print('-' * 50)
+        print('-' * 60)
         if opcao == 5:
             break
         elif opcao == 1:
@@ -42,7 +42,12 @@ while True:
                 subtracao -= num
             print(f'O resultado é igual a \033[32m{subtracao}\033[m')
         elif opcao == 3:
-            pass
+            mult = 1
+            for num in listanum:
+                mult *= num
+            print(f'O resultado é igual a \033[32m{mult}\033[m')
         elif opcao == 4:
-            pass
+            for num in listanum:
+                div /= num
+            print(f'O resultado é igual a \033[32m{div}\033[m')
 # elif tiponumeros == 'reais':

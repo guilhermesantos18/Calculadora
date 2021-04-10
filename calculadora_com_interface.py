@@ -35,26 +35,32 @@ btn_i = tk.Button(text='=', width=5, relief=tk.GROOVE, borderwidth=2, bg='#66C4F
 btn_n = tk.Button(text='+/-', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
 btn_v = tk.Button(text=',', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
 
+# Texto
+text = tk.Entry()
+
 # Botões numéricos posicionados
-btn_0.grid(row=3, column=1, ipady=5, padx=2)
-btn_1.grid(row=2, column=0, ipady=5, padx=2)
-btn_2.grid(row=2, column=1, ipady=5, padx=2)
-btn_3.grid(row=2, column=2, ipady=5, padx=2)
-btn_4.grid(row=1, column=0, ipady=5, padx=2)
-btn_5.grid(row=1, column=1, ipady=5, padx=2)
-btn_6.grid(row=1, column=2, ipady=5, padx=2)
-btn_7.grid(row=0, column=0, ipady=5, padx=2)
-btn_8.grid(row=0, column=1, ipady=5, padx=2)
-btn_9.grid(row=0, column=2, ipady=5, padx=2)
+btn_0.grid(row=4, column=1, ipady=5, padx=2)
+btn_1.grid(row=3, column=0, ipady=5, padx=2)
+btn_2.grid(row=3, column=1, ipady=5, padx=2)
+btn_3.grid(row=3, column=2, ipady=5, padx=2)
+btn_4.grid(row=2, column=0, ipady=5, padx=2)
+btn_5.grid(row=2, column=1, ipady=5, padx=2)
+btn_6.grid(row=2, column=2, ipady=5, padx=2)
+btn_7.grid(row=1, column=0, ipady=5, padx=2)
+btn_8.grid(row=1, column=1, ipady=5, padx=2)
+btn_9.grid(row=1, column=2, ipady=5, padx=2)
 
 # Botões de operação posicionados
-btn_x.grid(row=0, column=3, ipady=5, padx=2)
-btn_s.grid(row=1, column=3, ipady=5, padx=2)
-btn_a.grid(row=2, column=3, ipady=5, padx=2)
-btn_i.grid(row=3, column=3, ipady=5, padx=2)
+btn_x.grid(row=1, column=3, ipady=5, padx=2)
+btn_s.grid(row=2, column=3, ipady=5, padx=2)
+btn_a.grid(row=3, column=3, ipady=5, padx=2)
+btn_i.grid(row=4, column=3, ipady=5, padx=2)
 
 # Outros Botões posicionados
-btn_n.grid(row=3, column=0, ipady=5, padx=2)
-btn_v.grid(row=3, column=2, ipady=5, padx=2)
+btn_n.grid(row=4, column=0, ipady=5, padx=2)
+btn_v.grid(row=4, column=2, ipady=5, padx=2)
+
+# Posicionamento do texto
+text.grid(row=0, column=0, sticky='ne')
 
 janela_principal.mainloop()

@@ -5,7 +5,7 @@ import tkinter as tk
 janela_principal = tk.Tk()
 janela_principal.title('Calculadora')
 janela_principal.columnconfigure([0, 1, 2, 3], minsize=1)
-janela_principal.rowconfigure([0, 1, 2, 3], minsize=40)
+janela_principal.rowconfigure([0, 1, 2, 3], minsize=37)
 
 # Botões numéricos
 btn_0 = tk.Button(text='0', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
@@ -36,7 +36,7 @@ btn_n = tk.Button(text='+/-', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4C
 btn_v = tk.Button(text=',', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
 
 # Texto
-text = tk.Entry()
+text = tk.Entry(width=30, relief=tk.GROOVE, borderwidth=2, cursor=tk.RIGHT)
 
 # Botões numéricos posicionados
 btn_0.grid(row=4, column=1, ipady=5, padx=2)
@@ -61,6 +61,6 @@ btn_n.grid(row=4, column=0, ipady=5, padx=2)
 btn_v.grid(row=4, column=2, ipady=5, padx=2)
 
 # Posicionamento do texto
-text.grid(row=0, column=0, sticky='ne')
+text.place(x=5, y=10, height=20)
 
 janela_principal.mainloop()

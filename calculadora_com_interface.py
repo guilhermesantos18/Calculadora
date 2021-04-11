@@ -1,16 +1,39 @@
 import tkinter as tk
-index = 0
 
 
-def digitar():
-    while btn_0:
-        text.insert(30, 0)
-        print('H')
-        break
-    while btn_1:
-        text.insert(30, 1)
-        print('R')
-        break
+def digitar_0():
+    text.insert(30, 0)
+    global valor_0
+    valor_0 = str(0)
+    print(valor_0)
+
+
+def digitar_1():
+    text.insert(30, 1)
+    global valor_1
+    valor_1 = str(1)
+    print(valor_1)
+
+
+def digitar_a():
+    text.insert(30, '+')
+    valor_a = '+'
+    print(valor_a)
+    global num_1
+    if valor_a:
+        num_1 = int(''.join([valor_1, valor_0]))
+        print(num_1)
+
+
+def res():
+    text.insert(30, '=')
+    valor_i = '='
+    print(valor_i)
+    if valor_i:
+        num_2 = int(''.join([valor_1, valor_0]))
+        resu = num_1 + num_2
+        print(resu)
+    text.insert(30, resu)
 
 
 # Configurações da janela principal, tamanho, titulo, configurações
@@ -21,8 +44,8 @@ janela_principal.columnconfigure([0, 1, 2, 3], minsize=1)
 janela_principal.rowconfigure([0, 1, 2, 3], minsize=37)
 
 # Botões numéricos
-btn_0 = tk.Button(text='0', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', command=digitar)
-btn_1 = tk.Button(text='1', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', command=digitar)
+btn_0 = tk.Button(text='0', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', command=digitar_0)
+btn_1 = tk.Button(text='1', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', command=digitar_1)
 btn_2 = tk.Button(text='2', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
 btn_3 = tk.Button(text='3', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
 btn_4 = tk.Button(text='4', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
@@ -39,8 +62,8 @@ btn_9 = tk.Button(text='9', width=5, relief=tk.GROOVE, borderwidth=2, bg='white'
 # (i - igual =)
 btn_x = tk.Button(text='x', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
 btn_s = tk.Button(text='-', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
-btn_a = tk.Button(text='+', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
-btn_i = tk.Button(text='=', width=5, relief=tk.GROOVE, borderwidth=2, bg='#66C4F2')
+btn_a = tk.Button(text='+', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA', command=digitar_a)
+btn_i = tk.Button(text='=', width=5, relief=tk.GROOVE, borderwidth=2, bg='#66C4F2', command=res)
 
 # Outros Botões
 # (n - positvo ou negativo)

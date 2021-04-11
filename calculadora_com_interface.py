@@ -1,4 +1,17 @@
 import tkinter as tk
+index = 0
+
+
+def digitar():
+    while btn_0:
+        text.insert(30, 0)
+        print('H')
+        break
+    while btn_1:
+        text.insert(30, 1)
+        print('R')
+        break
+
 
 # Configurações da janela principal, tamanho, titulo, configurações
 # das linha, e das colunas
@@ -8,8 +21,8 @@ janela_principal.columnconfigure([0, 1, 2, 3], minsize=1)
 janela_principal.rowconfigure([0, 1, 2, 3], minsize=37)
 
 # Botões numéricos
-btn_0 = tk.Button(text='0', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
-btn_1 = tk.Button(text='1', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
+btn_0 = tk.Button(text='0', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', command=digitar)
+btn_1 = tk.Button(text='1', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', command=digitar)
 btn_2 = tk.Button(text='2', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
 btn_3 = tk.Button(text='3', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
 btn_4 = tk.Button(text='4', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
@@ -36,7 +49,7 @@ btn_n = tk.Button(text='+/-', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4C
 btn_v = tk.Button(text=',', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
 
 # Texto
-text = tk.Entry(width=30, relief=tk.GROOVE, borderwidth=2, cursor=tk.RIGHT)
+text = tk.Entry(width=30, relief=tk.GROOVE, borderwidth=2, justify=tk.RIGHT)
 
 # Botões numéricos posicionados
 btn_0.grid(row=4, column=1, ipady=5, padx=2)

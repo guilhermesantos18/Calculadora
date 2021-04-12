@@ -1,5 +1,5 @@
 import tkinter as tk
-
+import tkinter.font as font
 
 def digitar_0():
     ecra.insert(30, 0)
@@ -38,23 +38,24 @@ def res():
 
 
 # Configurações da janela principal, tamanho, titulo, configurações
-# das linha, e das colunas
+# das linha, das colunas e da fonte
 janela_principal = tk.Tk()
 janela_principal.title('Calculadora')
 janela_principal.columnconfigure([0, 1, 2, 3], minsize=1)
 janela_principal.rowconfigure([0, 1, 2, 3, 4], minsize=37)
+font = font.Font(size=10)
 
 # Botões numéricos
-btn_0 = tk.Button(text='0', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', command=digitar_0)
-btn_1 = tk.Button(text='1', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', command=digitar_1)
-btn_2 = tk.Button(text='2', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
-btn_3 = tk.Button(text='3', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
-btn_4 = tk.Button(text='4', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
-btn_5 = tk.Button(text='5', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
-btn_6 = tk.Button(text='6', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
-btn_7 = tk.Button(text='7', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
-btn_8 = tk.Button(text='8', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
-btn_9 = tk.Button(text='9', width=5, relief=tk.GROOVE, borderwidth=2, bg='white')
+btn_0 = tk.Button(text='0', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', font=font, command=digitar_0)
+btn_1 = tk.Button(text='1', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', font=font, command=digitar_1)
+btn_2 = tk.Button(text='2', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', font=font)
+btn_3 = tk.Button(text='3', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', font=font)
+btn_4 = tk.Button(text='4', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', font=font)
+btn_5 = tk.Button(text='5', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', font=font)
+btn_6 = tk.Button(text='6', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', font=font)
+btn_7 = tk.Button(text='7', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', font=font)
+btn_8 = tk.Button(text='8', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', font=font)
+btn_9 = tk.Button(text='9', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', font=font)
 
 # Botões de operação
 # (x - multiplacação)
@@ -62,28 +63,29 @@ btn_9 = tk.Button(text='9', width=5, relief=tk.GROOVE, borderwidth=2, bg='white'
 # (a - adição)
 # (i - igual)
 # (div - divisão)
-btn_div = tk.Button(text=':', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
-btn_x = tk.Button(text='x', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
-btn_s = tk.Button(text='-', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
-btn_a = tk.Button(text='+', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA', command=digitar_a)
-btn_i = tk.Button(text='=', width=5, relief=tk.GROOVE, borderwidth=2, bg='#66C4F2', command=res)
+btn_div = tk.Button(text=':', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA', font=font)
+btn_x = tk.Button(text='x', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA', font=font)
+btn_s = tk.Button(text='-', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA', font=font)
+btn_a = tk.Button(text='+', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA', font=font, command=digitar_a)
+btn_i = tk.Button(text='=', width=5, relief=tk.GROOVE, borderwidth=2, bg='#66C4F2', font=font, command=res)
 
 # Adicionar icon ao botão delete
-icon_delete = tk.PhotoImage(file=r'')
+icon_delete = tk.PhotoImage(file='C:\Programação e Projetos\Python\projetospython\Calculadora\Calculadora com interface gráfica\Icon\outline_backspace_black_24dp.gif')
+
 # Outros Botões
 # (n - positvo ou negativo)
 # (v - vígula)
 # (d - delete)
 # (pe - parênteses esquerdo)
 # (pd - parênteses direito)
-btn_n = tk.Button(text='+/-', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
-btn_v = tk.Button(text=',', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
-btn_d = tk.Button(text='del', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
-btn_pe = tk.Button(text='(', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
-btn_pd = tk.Button(text=')', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
+btn_n = tk.Button(text='+/-', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA', font=font)
+btn_v = tk.Button(text=',', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA', font=font)
+btn_d = tk.Button(text='del', width=44, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA', image=icon_delete)
+btn_pe = tk.Button(text='(', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA', font=font)
+btn_pd = tk.Button(text=')', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA', font=font)
 
 # Ecrâ Calculadora
-ecra = tk.Entry(width=30, relief=tk.GROOVE, borderwidth=2, justify=tk.RIGHT)
+ecra = tk.Entry(width=30, relief=tk.GROOVE, borderwidth=2, justify=tk.RIGHT, font=font)
 
 # Botões numéricos posicionados
 btn_0.grid(row=5, column=1, ipady=5, padx=2)
@@ -105,13 +107,13 @@ btn_a.grid(row=4, column=3, ipady=5, padx=2)
 btn_i.grid(row=5, column=3, ipady=5, padx=2)
 
 # Outros Botões posicionados
-btn_d.grid(row=1, column=2, ipady=5, padx=2)
+btn_d.grid(row=1, column=2, ipady=4, padx=2)
 btn_n.grid(row=5, column=0, ipady=5, padx=2)
 btn_v.grid(row=5, column=2, ipady=5, padx=2)
 btn_pe.grid(row=1, column=0, ipady=5, padx=2)
 btn_pd.grid(row=1, column=1, ipady=5, padx=2)
 
 # Posicionamento do Ecrã
-ecra.place(x=5, y=10, height=20)
+ecra.place(x=5, y=5, height=30)
 
 janela_principal.mainloop()

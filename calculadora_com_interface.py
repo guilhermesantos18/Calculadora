@@ -2,21 +2,21 @@ import tkinter as tk
 
 
 def digitar_0():
-    text.insert(30, 0)
+    ecra.insert(30, 0)
     global valor_0
     valor_0 = str(0)
     print(valor_0)
 
 
 def digitar_1():
-    text.insert(30, 1)
+    ecra.insert(30, 1)
     global valor_1
     valor_1 = str(1)
     print(valor_1)
 
 
 def digitar_a():
-    text.insert(30, '+')
+    ecra.insert(30, '+')
     valor_a = '+'
     print(valor_a)
     global num_1
@@ -26,14 +26,15 @@ def digitar_a():
 
 
 def res():
-    text.insert(30, '=')
+    global resu
+    ecra.insert(30, '=')
     valor_i = '='
     print(valor_i)
     if valor_i:
         num_2 = int(''.join([valor_1, valor_0]))
         resu = num_1 + num_2
         print(resu)
-    text.insert(30, resu)
+    ecra.insert(30, resu)
 
 
 # Configurações da janela principal, tamanho, titulo, configurações
@@ -41,7 +42,7 @@ def res():
 janela_principal = tk.Tk()
 janela_principal.title('Calculadora')
 janela_principal.columnconfigure([0, 1, 2, 3], minsize=1)
-janela_principal.rowconfigure([0, 1, 2, 3], minsize=37)
+janela_principal.rowconfigure([0, 1, 2, 3, 4], minsize=37)
 
 # Botões numéricos
 btn_0 = tk.Button(text='0', width=5, relief=tk.GROOVE, borderwidth=2, bg='white', command=digitar_0)
@@ -57,9 +58,11 @@ btn_9 = tk.Button(text='9', width=5, relief=tk.GROOVE, borderwidth=2, bg='white'
 
 # Botões de operação
 # (x - multiplacação)
-# (s - subtração -)
-# (a - adição +)
-# (i - igual =)
+# (s - subtração)
+# (a - adição)
+# (i - igual)
+# (div - divisão)
+btn_div = tk.Button(text=':', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
 btn_x = tk.Button(text='x', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
 btn_s = tk.Button(text='-', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
 btn_a = tk.Button(text='+', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA', command=digitar_a)
@@ -68,35 +71,45 @@ btn_i = tk.Button(text='=', width=5, relief=tk.GROOVE, borderwidth=2, bg='#66C4F
 # Outros Botões
 # (n - positvo ou negativo)
 # (v - vígula)
+# (d - delete)
+# (pe - parênteses esquerdo)
+# (pd - parênteses direito)
 btn_n = tk.Button(text='+/-', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
 btn_v = tk.Button(text=',', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
+btn_d = tk.Button(text='del', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
+btn_pe = tk.Button(text='(', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
+btn_pd = tk.Button(text=')', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA')
 
-# Texto
-text = tk.Entry(width=30, relief=tk.GROOVE, borderwidth=2, justify=tk.RIGHT)
+# Ecrâ Calculadora
+ecra = tk.Entry(width=30, relief=tk.GROOVE, borderwidth=2, justify=tk.RIGHT)
 
 # Botões numéricos posicionados
-btn_0.grid(row=4, column=1, ipady=5, padx=2)
-btn_1.grid(row=3, column=0, ipady=5, padx=2)
-btn_2.grid(row=3, column=1, ipady=5, padx=2)
-btn_3.grid(row=3, column=2, ipady=5, padx=2)
-btn_4.grid(row=2, column=0, ipady=5, padx=2)
-btn_5.grid(row=2, column=1, ipady=5, padx=2)
-btn_6.grid(row=2, column=2, ipady=5, padx=2)
-btn_7.grid(row=1, column=0, ipady=5, padx=2)
-btn_8.grid(row=1, column=1, ipady=5, padx=2)
-btn_9.grid(row=1, column=2, ipady=5, padx=2)
+btn_0.grid(row=5, column=1, ipady=5, padx=2)
+btn_1.grid(row=4, column=0, ipady=5, padx=2)
+btn_2.grid(row=4, column=1, ipady=5, padx=2)
+btn_3.grid(row=4, column=2, ipady=5, padx=2)
+btn_4.grid(row=3, column=0, ipady=5, padx=2)
+btn_5.grid(row=3, column=1, ipady=5, padx=2)
+btn_6.grid(row=3, column=2, ipady=5, padx=2)
+btn_7.grid(row=2, column=0, ipady=5, padx=2)
+btn_8.grid(row=2, column=1, ipady=5, padx=2)
+btn_9.grid(row=2, column=2, ipady=5, padx=2)
 
 # Botões de operação posicionados
-btn_x.grid(row=1, column=3, ipady=5, padx=2)
-btn_s.grid(row=2, column=3, ipady=5, padx=2)
-btn_a.grid(row=3, column=3, ipady=5, padx=2)
-btn_i.grid(row=4, column=3, ipady=5, padx=2)
+btn_div.grid(row=1, column=3, ipady=5, padx=2)
+btn_x.grid(row=2, column=3, ipady=5, padx=2)
+btn_s.grid(row=3, column=3, ipady=5, padx=2)
+btn_a.grid(row=4, column=3, ipady=5, padx=2)
+btn_i.grid(row=5, column=3, ipady=5, padx=2)
 
 # Outros Botões posicionados
-btn_n.grid(row=4, column=0, ipady=5, padx=2)
-btn_v.grid(row=4, column=2, ipady=5, padx=2)
+btn_d.grid(row=1, column=2, ipady=5, padx=2)
+btn_n.grid(row=5, column=0, ipady=5, padx=2)
+btn_v.grid(row=5, column=2, ipady=5, padx=2)
+btn_pe.grid(row=1, column=0, ipady=5, padx=2)
+btn_pd.grid(row=1, column=1, ipady=5, padx=2)
 
-# Posicionamento do texto
-text.place(x=5, y=10, height=20)
+# Posicionamento do Ecrã
+ecra.place(x=5, y=10, height=20)
 
 janela_principal.mainloop()

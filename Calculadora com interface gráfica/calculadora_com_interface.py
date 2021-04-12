@@ -68,6 +68,8 @@ btn_s = tk.Button(text='-', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBC
 btn_a = tk.Button(text='+', width=5, relief=tk.GROOVE, borderwidth=2, bg='#C4CBCA', command=digitar_a)
 btn_i = tk.Button(text='=', width=5, relief=tk.GROOVE, borderwidth=2, bg='#66C4F2', command=res)
 
+# Adicionar icon ao botão delete
+icon_delete = tk.PhotoImage(file=r'')
 # Outros Botões
 # (n - positvo ou negativo)
 # (v - vígula)
